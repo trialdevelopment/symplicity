@@ -13,8 +13,7 @@ Finally, this entire app is minified using gulp and creating gulp pipelines, whi
 Routing in the app is done by UI-router and not the default ngRoute. $states are used, which help with the nested views and not binding a particular view with the url. 
 Many other features are used like session storage, to store the user object, using which we determine the role of user as an admin or a regular user.
 Notification Provider is used to provide user-friendly notifications and to make the experience as simple as possible.
-ngMessages are used for form validation and displaying appropriate messages where the requirements are not met.
-UI-bootstrap is used for pagination of the view.
+ngMessages are used for form validation and displaying appropriate messages where the requirements are not met. UI-bootstrap is used for pagination of the view.
 ===============================================================================================================================
 Back End{Java Spring, JPA, Hibernate, Maven, Swagger for API documentation, JUnit for unit testing, MySQL}
 Just like the front-end, even the backend is MVC. Layered approach helps keep the code clean and injects dependency as required.
@@ -22,8 +21,6 @@ There are several layers starting the basic Entity layer(class) for entities lik
 There is a CONTOLLER layer which provides the mapping for API endpoints and directs the further calls.
 Service layer which further forward the request to DAO(Data Access Object) for processing.
 DAO is the final layer, which does all the communication with the DB and lower level processing and returns back the result.
-Also, have provided an EXCEPTION layer that takes care of all exceptions like 'UserAlreadyExists','UserNotFound','FruitAlreadyExists' or 'FruitNotFound'. Appropriate API Responses are provided in case of success or failure such as status 200, 404 or 500 etc.
-JackSon library is used to convert data into JSON for reading and sending response.
-Also used MOCIKTO to mock and test the enitre backend API.
+Also, have provided an EXCEPTION layer that takes care of all exceptions like 'UserAlreadyExists','UserNotFound','FruitAlreadyExists' or 'FruitNotFound'. Appropriate API Responses are provided in case of success or failure such as status 200, 404 or 500 etc. JackSon library is used to convert data into JSON for reading and sending response. Also used MOCIKTO to mock and test the enitre backend API.
 ===============================================================================================================================
 Overall, it's a completely tested, production ready, minified web-app.

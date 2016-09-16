@@ -1,0 +1,55 @@
+<div class="modal-header">
+    <button ng-click="modalVm.close()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h3 class="modal-title addFruit">{{modalVm.title}}</h3>
+</div>
+<div class="modal-body" >
+    <form name="fruitUpdateForm" novalidate>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" required class="form-control" placeholder="Title of the Fruit" id="title" ng-model="modalVm.fruit.title">
+                    <div class="error" ng-messages="fruitUpdateForm.title.$error"  ng-if="fruitUpdateForm.title.$dirty">
+                        <p ng-message="required">Fruit Title is required</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel vote-panel">
+                    <div class="panel-heading vote-panel-heading">Fruit Details</div>
+                    <div class="panel-body vote-panel-body">
+                        <div class="form-group">
+                            <label for="poster">Poster</label>
+                            <textarea type="url" name="poster" placeholder="URL of Fruit Poster" required rows="4" class="form-control" id="poster" ng-model="modalVm.fruit.poster"></textarea>
+                            <div class="error" ng-messages="fruitUpdateForm.poster.$error"  ng-if="fruitUpdateForm.poster.$dirty">
+                                <p ng-message="required">Poster URL is required</p>
+                                <p ng-message="url">Poster URL is invalid</p>
+                            </div>
+                        </div>
+                        <img class="img-responsive img-rounded updatePoster" ng-src="{{modalVm.fruit.poster}}"/>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-sm-4">
+                <div class="form-group">
+                    <label for="rating">Vote</label>
+                    <input type="number" name="rating" placeholder="User Vote for the Fruit" class="form-control" id="rating" min="0" ng-model="modalVm.fruit.vote">
+                    <div class="error" ng-messages="fruitAddForm.vote.$error"  ng-if="fruitAddForm.vote.$dirty">
+                        <p ng-message="min">Vote should be greater than or equal to 0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="error">
+        <p  ng-show="modalVm.fruitAlreadyExists">Fruit is already there in the catalog with this name</p>
+        <p  ng-show="modalVm.fruitNotFound">There is no Fruit with this name in the catalog</p>
+    </div>
+</div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="modalVm.updateFruit(fruitUpdateForm.$valid)">{{modalVm.btnTxt}}</button>
+    <button class="btn btn-warning" ng-click="modalVm.close()">Cancel</button>
+</div>

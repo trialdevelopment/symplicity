@@ -1,0 +1,39 @@
+{
+  "name": "voting app",
+  "description": "voting app for Symplicity",
+  "authors": [
+    "jnagda@iupui.edu"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "bootstrap": "^3.3.6",
+    "angular-messages": "^1.5.0",
+    "angular-ui-router": "^0.2.18",
+    "angular-ui-notification": "^0.2.0",
+    "ngstorage": "^0.3.10",
+    "angular-bootstrap": "^1.2.4",
+    "angular-animate": "^1.5.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/fonts/glyphicons-halflings-regular.eot",
+        "dist/fonts/glyphicons-halflings-regular.svg",
+        "dist/fonts/glyphicons-halflings-regular.ttf",
+        "dist/fonts/glyphicons-halflings-regular.woff",
+        "dist/fonts/glyphicons-halflings-regular.woff2"
+      ]
+    }
+  }
+}

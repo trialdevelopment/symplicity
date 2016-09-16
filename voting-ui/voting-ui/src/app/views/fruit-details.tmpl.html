@@ -1,0 +1,15 @@
+<div class="container-fluid" ng-controller="FruitDetailController as fruitDetailVm">
+    <div class="row fruitCatalog">
+        <div class="col-sm-4">
+        <img class="img-responsive img-rounded fruitPoster" ng-src="{{fruitDetailVm.fruit.poster}}">
+        </div>
+        <div class="col-sm-4 fruitDetails">
+            <p class="fruitTitle">{{fruitDetailVm.fruit.title}}
+            <span class="voteHeading">(Total Votes: {{fruitDetailVm.fruit.vote}})</span>
+            </p>
+            <p class="glyphicon glyphicon-thumbs-up">
+                <span><button class="userVote" ng-model="fruitDetailVm.fruit.vote" ng-click="fruitDetailVm.updateVote()">UPVOTE</button></span>
+            </p>
+        </div>
+    </div>
+</div>
